@@ -1,4 +1,4 @@
-# ROSGA- Ransome (Decryption Code)
+# ROSGA- Ransom (Decryption Code)
 #!/usr/bin/env python3
 import os
 from cryptography.fernet import Fernet
