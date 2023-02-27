@@ -26,6 +26,11 @@ if user_phrase == secretphrase:
         with open(file, "wb") as thefile:
             thefile.write(decrypted_contents)
         print("Correct! Your files are now decrypted!")
-        os.remove("secret_key.key")  #removes secret key after decryption
+        
 else: 
     print("Sorry, wrong secret phrase!")
+if os.path.isfile("secret_key.key"):
+    os.remove("secret_key.key") #removes secret key after decryption
+    print("Secret key has been removed")
+else:
+    pass
